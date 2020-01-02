@@ -11,3 +11,5 @@ The user will select specific days for the list to reset, ex: birthday, christma
 The app can also keep track of what you are getting people.
 This will be nicely integrated for other users, but can also be done for people not using the app.
 For each present, the user can keep track of the status of the present: chosen, ordered, received, wrapped.
+
+For a detailed breakdown of the API, look [here](api.md).
