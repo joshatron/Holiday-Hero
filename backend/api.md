@@ -12,7 +12,6 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/{id}/remove                     | Removes the list                                              |
 | /v1/lists/{id}/items/add                  | Add the specified item to the list                            |
 | /v1/lists/{id}/items/remove               | Remove the specified item from the list                       |
-| /v1/lists/{id}/items/mark                 | Mark that you are getting the specified item from the list    |
 | /v1/lists/{id}/occasions/add              | Adds occasion to this list                                    |
 | /v1/lists/{id}/occasions/remove           | Removes an occasion from this list                            |
 | /v1/lists/{id}/sharing/mode               | Changes the mode of sharing between public, friends, selected |
@@ -31,7 +30,7 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/giving/{id}/add                       | Adds a person to the occasion                                 |
 | /v1/giving/{id}/{person}                  | Gets info about the person for the occasion                   |
 | /v1/giving/{id}/{person}/remove           | Remove the person from the occasion                           |
-| /v1/giving/{id}/{person}/add              | Adds a gift for the person                                    |
+| /v1/giving/{id}/{person}/add              | Adds a gift for the person, marks the gift if getting off list|
 | /v1/giving/{id}/{person}/{gift}           | Gets info about the gift                                      |
-| /v1/giving/{id}/{person}/{gift}/remove    | Removes the gift                                              |
+| /v1/giving/{id}/{person}/{gift}/remove    | Removes the gift, unmarks if the gift was marked              |
 | /v1/giving/{id}/{person}/{gift}/update    | Updates the info or status of the gift                        |
