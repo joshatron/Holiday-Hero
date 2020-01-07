@@ -23,9 +23,11 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/occasions/add                   | Add the occasion to the default list                          |
 | /v1/lists/occasions/remove                | Remove the occasion to the default list                       |
 | /v1/giving                                | Gets all of the occasions the user is getting gifts for       |
+| /v1/giving/default-roll                   | Set the default days after an occasion for it to roll         |
 | /v1/giving/add                            | Adds a new gift giving occasion                               |
 | /v1/giving/{id}                           | Gets summary info relevant to the occasion                    |
 | /v1/giving/{id}?year=20XX                 | Gets all the info for an occasion from a previous year        |
+| /v1/giving/{id}/roll                      | Rolls occasion to the next year                               |
 | /v1/giving/{id}/remove                    | Removes the giving occasion                                   |
 | /v1/giving/{id}/add                       | Adds a person to the occasion                                 |
 | /v1/giving/{id}/{person}                  | Gets info about the person for the occasion                   |
