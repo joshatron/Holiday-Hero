@@ -13,3 +13,4 @@ This will be nicely integrated for other users, but can also be done for people 
 For each present, the user can keep track of the status of the present: chosen, ordered, received, wrapped.
 
 For a detailed breakdown of the API, look [here](api.md).
+For a detailed breakdown of the database, look [here](database.md).
