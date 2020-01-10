@@ -8,20 +8,24 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/register                              | This is how to create a new user                              |
 | /v1/lists                                 | Gets all of the lists you have created                        |
 | /v1/lists/add                             | Adds a new list                                               |
-| /v1/lists/{id}                            | Get the actual list and occasions with the given ID           |
+| /v1/lists/{id}                            | Gets info about the list                                      |
 | /v1/lists/{id}/remove                     | Removes the list                                              |
+| /v1/lists/{id}/items                      | Gets all the items in the list                                |
 | /v1/lists/{id}/items/add                  | Add the specified item to the list                            |
-| /v1/lists/{id}/items/remove               | Remove the specified item from the list                       |
-| /v1/lists/{id}/occasions/add              | Adds occasion to this list                                    |
+| /v1/lists/{id}/items/{item-id}            | Get info on the specified item                                |
+| /v1/lists/{id}/items/{item-id}/remove     | Remove the specified item from the list                       |
+| /v1/lists/{id}/items/{item-id}/update     | Replace info about the item with the given data               |
+| /v1/lists/{id}/occasions                  | Gets all the occasions for the list                           |
+| /v1/lists/{id}/occasions/set              | Adds occasion to this list                                    |
 | /v1/lists/{id}/occasions/remove           | Removes an occasion from this list                            |
 | /v1/lists/{id}/sharing/mode               | Changes the mode of sharing between public, friends, selected |
 | /v1/lists/{id}/sharing/code               | Gets a code that anyone can use to see the list               |
 | /v1/lists/{id}/sharing/reset-code         | Resets the share code so that the old one is invalid          |
 | /v1/lists/{id}/sharing/add                | Add a person who can view, only works in selected mode        |
 | /v1/lists/{id}/sharing/remove             | Remove a person who can view, only works in selected mode     |
-| /v1/lists/occasions                       | Lists the default occasions set for new lists                 |
-| /v1/lists/occasions/add                   | Add the occasion to the default list                          |
-| /v1/lists/occasions/remove                | Remove the occasion to the default list                       |
+| /v1/lists/default-occasions               | Lists the default occasions set for new lists                 |
+| /v1/lists/default-occasions/add           | Add the occasion to the default list                          |
+| /v1/lists/default-occasions/remove        | Remove the occasion to the default list                       |
 | /v1/giving                                | Gets all of the occasions the user is getting gifts for       |
 | /v1/giving/default-roll                   | Set the default days after an occasion for it to roll         |
 | /v1/giving/add                            | Adds a new gift giving occasion                               |
