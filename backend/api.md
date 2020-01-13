@@ -12,6 +12,7 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/occasions/{id}                      | Gets info about an occasion                                   |
 | /v1/lists/occasions/{id}/remove               | Deletes the occasion                                          |
 | /v1/lists/occasions/{id}/update               | Replaces info about the occasion                              |
+| /v1/lists/default-share                       | Sets the default share mode for new lists                     |
 | /v1/lists/add                                 | Adds a new list                                               |
 | /v1/lists/{id}                                | Gets info about the list                                      |
 | /v1/lists/{id}/remove                         | Removes the list                                              |
@@ -28,6 +29,7 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/{id}/sharing/mode                   | Changes the mode of sharing between public, friends, selected |
 | /v1/lists/{id}/sharing/code                   | Gets a code that anyone can use to see the list               |
 | /v1/lists/{id}/sharing/reset-code             | Resets the share code so that the old one is invalid          |
+| /v1/lists/{id}/sharing/delete-code            | Removes the share code, not creating a new one                |
 | /v1/lists/{id}/sharing/{user-id}/set          | Allows person to be able to view the list                     |
 | /v1/lists/{id}/sharing/{user-id}/unset        | Unallows person to view assuming not able to by other means   |
 | /v1/giving                                    | Gets all of the occasions the user is getting gifts for       |

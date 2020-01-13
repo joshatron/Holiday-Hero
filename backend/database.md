@@ -11,6 +11,7 @@ The following is the structure of the database for the server:
 | username              | string        | NOT NULL                  | User's username                                   |
 | auth                  | string        | NOT NULL                  | Data used to authenticate user                    |
 | default-roll-days     | int           | NOT NULL                  | Number of days after occasion before rolling      |
+| default-share-mode    | int           | NOT NULL                  | Default share mode for new lists                  |
 
 ## Lists
 
@@ -20,6 +21,7 @@ The following is the structure of the database for the server:
 | title                 | string        | NOT NULL                  | Title displayed for the list                      |
 | owner                 | string        | NOT NULL                  | UUID of the user who created the list             |
 | share-mode            | int           | NOT NULL                  | Sharing mode, number corresponds to enum          |
+| share-code            | string        |                           | Share code, if empty there is no code             |
 
 ## List-Items
 
@@ -31,7 +33,7 @@ The following is the structure of the database for the server:
 | description           | string        |                           | A more detailed description of what it is         |
 | link                  | string        |                           | A link where the item could be found online       |
 
-## Occasions
+## List-Occasions
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -46,5 +48,13 @@ The following is the structure of the database for the server:
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
 | id                    | string        | PRIMARY KEY               | UUID of the mapping                               |
-| user                  | string        | NOT NULL                  | UUID of the user                                  |
+| list                  | string        | NOT NULL                  | UUID of the list                                  |
 | occasion              | string        | NOT NULL                  | UUID of the occasion                              |
+
+## List-Shares
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the mapping                               |
+| list                  | string        | NOT NULL                  | UUID of the list                                  |
+| user                  | string        | NOT NULL                  | UUID of the user to share with                    |
