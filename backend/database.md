@@ -58,3 +58,12 @@ The following is the structure of the database for the server:
 | id                    | string        | PRIMARY KEY               | UUID of the mapping                               |
 | list                  | string        | NOT NULL                  | UUID of the list                                  |
 | user                  | string        | NOT NULL                  | UUID of the user to share with                    |
+
+## Giving
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the giving occasion                       |
+| owner                 | string        | NOT NULL                  | UUID of the user                                  |
+| title                 | string        | NOT NULL                  | Title of the occasion                             |
+| description           | string        | NOT NULL                  | description of the occasion                       |
