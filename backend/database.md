@@ -34,7 +34,7 @@ The following is the structure of the database for the server:
 | description           | string        |                           | A more detailed description of what it is         |
 | link                  | string        |                           | A link where the item could be found online       |
 
-## List-Occasions
+## Occasions
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -43,6 +43,8 @@ The following is the structure of the database for the server:
 | title                 | string        | NOT NULL                  | Title displayed for the occasion                  |
 | description           | string        |                           | Description of the occasion                       |
 | day                   | string        | NOT NULL                  | Day of the year the occasion is on                |
+| day-this-year         | string        | NOT NULL                  | Day of the year used this year for rolling        |
+| type                  | int           | NOT NULL                  | Indicator for giving/receiving/both               |
 
 ## Occasion-List-Mappings
 

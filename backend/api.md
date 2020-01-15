@@ -10,28 +10,29 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/occasions/add                                         | Create an occasion                                            |
 | /v1/occasions/{id}                                        | Gets info about an occasion                                   |
 | /v1/occasions/{id}/remove                                 | Deletes the occasion                                          |
-| /v1/occasions/{id}/update                                 | Replaces info about the occasion                              |
-| /v1/receiving/lists                                       | Gets all of the lists you have created                        |
-| /v1/receiving/lists/default-share                         | Sets the default share mode for new lists                     |
-| /v1/receiving/lists/add                                   | Adds a new list                                               |
-| /v1/receiving/lists/{id}                                  | Gets info about the list                                      |
-| /v1/receiving/lists/{id}/remove                           | Removes the list                                              |
-| /v1/receiving/lists/{id}/update                           | Updates metadata about the list                               |
-| /v1/receiving/lists/{id}/roll                             | Roll over a list so bought items are deleted                  |
-| /v1/receiving/lists/{id}/items                            | Gets all the items in the list                                |
-| /v1/receiving/lists/{id}/items/add                        | Add the specified item to the list                            |
-| /v1/receiving/lists/{id}/items/{item-id}                  | Get info on the specified item                                |
-| /v1/receiving/lists/{id}/items/{item-id}/remove           | Remove the specified item from the list                       |
-| /v1/receiving/lists/{id}/items/{item-id}/update           | Replace info about the item with the given data               |
-| /v1/receiving/lists/{id}/occasions                        | Gets all the occasions that are set for the list              |
-| /v1/receiving/lists/{id}/occasions/{occasion-id}/set      | Sets occasion to this list                                    |
-| /v1/receiving/lists/{id}/occasions/{occasion-id}/unset    | Unsets occasion from this list                                |
-| /v1/receiving/lists/{id}/sharing/mode                     | Changes the mode of sharing between public, friends, selected |
-| /v1/receiving/lists/{id}/sharing/code                     | Gets a code that anyone can use to see the list               |
-| /v1/receiving/lists/{id}/sharing/reset-code               | Resets the share code so that the old one is invalid          |
-| /v1/receiving/lists/{id}/sharing/delete-code              | Removes the share code, not creating a new one                |
-| /v1/receiving/lists/{id}/sharing/{user-id}/set            | Allows person to be able to view the list                     |
-| /v1/receiving/lists/{id}/sharing/{user-id}/unset          | Unallows person to view assuming not able to by other means   |
+| /v1/occasions/{id}/update-info                            | Replaces info about the occasion                              |
+| /v1/occasions/{id}/set-last-date                          | Sets the date to use for rolling for this year                |
+| /v1/lists                                                 | Gets all of the lists you have created                        |
+| /v1/lists/default-share                                   | Sets the default share mode for new lists                     |
+| /v1/lists/add                                             | Adds a new list                                               |
+| /v1/lists/{id}                                            | Gets info about the list                                      |
+| /v1/lists/{id}/remove                                     | Removes the list                                              |
+| /v1/lists/{id}/update                                     | Updates metadata about the list                               |
+| /v1/lists/{id}/roll                                       | Roll over a list so bought items are deleted                  |
+| /v1/lists/{id}/items                                      | Gets all the items in the list                                |
+| /v1/lists/{id}/items/add                                  | Add the specified item to the list                            |
+| /v1/lists/{id}/items/{item-id}                            | Get info on the specified item                                |
+| /v1/lists/{id}/items/{item-id}/remove                     | Remove the specified item from the list                       |
+| /v1/lists/{id}/items/{item-id}/update                     | Replace info about the item with the given data               |
+| /v1/lists/{id}/occasions                                  | Gets all the occasions that are set for the list              |
+| /v1/lists/{id}/occasions/{occasion-id}/set                | Sets occasion to this list                                    |
+| /v1/lists/{id}/occasions/{occasion-id}/unset              | Unsets occasion from this list                                |
+| /v1/lists/{id}/sharing/mode                               | Changes the mode of sharing between public, friends, selected |
+| /v1/lists/{id}/sharing/code                               | Gets a code that anyone can use to see the list               |
+| /v1/lists/{id}/sharing/reset-code                         | Resets the share code so that the old one is invalid          |
+| /v1/lists/{id}/sharing/delete-code                        | Removes the share code, not creating a new one                |
+| /v1/lists/{id}/sharing/{user-id}/set                      | Allows person to be able to view the list                     |
+| /v1/lists/{id}/sharing/{user-id}/unset                    | Unallows person to view assuming not able to by other means   |
 | /v1/giving                                                | Gets all of the occasions the user is getting gifts for       |
 | /v1/giving/default-roll                                   | Set the default days after an occasion for it to roll         |
 | /v1/giving/add                                            | Adds a new gift giving occasion                               |
