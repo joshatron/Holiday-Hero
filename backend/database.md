@@ -9,6 +9,7 @@ The following is the structure of the database for the server:
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
 | id                    | string        | PRIMARY KEY               | UUID of the user                                  |
 | username              | string        | NOT NULL                  | User's username                                   |
+| name                  | string        | NOT NULL                  | User's name for display purposes                  |
 | auth                  | string        | NOT NULL                  | Data used to authenticate user                    |
 | default-roll-days     | int           | NOT NULL                  | Number of days after occasion before rolling      |
 | default-share-mode    | int           | NOT NULL                  | Default share mode for new lists                  |
@@ -67,3 +68,22 @@ The following is the structure of the database for the server:
 | owner                 | string        | NOT NULL                  | UUID of the user                                  |
 | title                 | string        | NOT NULL                  | Title of the occasion                             |
 | description           | string        | NOT NULL                  | description of the occasion                       |
+
+## Nonusers
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the non-user                              |
+| name                  | string        | NOT NULL                  | Name of the non-user                              |
+| owner                 | string        | NOT NULL                  | User who created the non-user                     |
+
+## Gifts   
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the gift                                  |
+| title                 | string        | NOT NULL                  | Name of the gift                                  |
+| description           | string        |                           | Description for the gift                          |
+| owner                 | string        | NOT NULL                  | User who created the gift                         |
+| receiver              | string        | NOT NULL                  | User or nonuser who the gift is for               |
+| status                | int           | NOT NULL                  | Status of the gift, maps to an enum               |
