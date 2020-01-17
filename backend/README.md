@@ -40,10 +40,7 @@ That way you can have one list for everyone without having to worry about repeat
 Others can even add what they are getting you even if it's not on your list.
 
 You can also manage the visibility of your list.
-The options are public, people you are connected with, or selected only.
-You can also get a share code which anyone can use to access the list, even without an account.
-
-For public, anyone with or without an account who you haven't blocked can access it.
-For connected, anyone who you have marked for giving or receiving can view it.
-For selected, only the users you select can view.
-You can use the share code with any of these modes and you are able to reset the code.
+The options are public or private.
+When you want to share a list, you do so with a share code.
+If the list is public, anyone, account or no can view and mark the list.
+If it is private, you authorize the users you want for the list and only they can view and mark it.
