@@ -13,6 +13,8 @@ The following is the structure of the database for the server:
 | auth                  | string        | NOT NULL                  | Data used to authenticate user                    |
 | default-roll-days     | int           | NOT NULL                  | Number of days after occasion before rolling      |
 | default-share-mode    | int           | NOT NULL                  | Default share mode for new lists                  |
+| created               | string        | NOT NULL                  | Date the user was created                         |
+| last-login            | string        | NOT NULL                  | Date the user last logged in                      |
 
 ## Lists
 
@@ -20,6 +22,8 @@ The following is the structure of the database for the server:
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
 | id                    | string        | PRIMARY KEY               | UUID of the list                                  |
 | title                 | string        | NOT NULL                  | Title displayed for the list                      |
+| created               | string        | NOT NULL                  | Date the list was created                         |
+| modified              | string        | NOT NULL                  | Date the list was modified                        |
 | owner                 | string        | NOT NULL                  | UUID of the user who created the list             |
 | share-mode            | int           | NOT NULL                  | Sharing mode, number corresponds to enum          |
 | share-code            | string        |                           | Share code, if empty there is no code             |
@@ -31,6 +35,8 @@ The following is the structure of the database for the server:
 | id                    | string        | PRIMARY KEY               | UUID of the list item                             |
 | list                  | string        | NOT NULL                  | UUID of the list                                  |
 | title                 | string        | NOT NULL                  | Title displayed for the item                      |
+| created               | string        | NOT NULL                  | Date the item was created                         |
+| modified              | string        | NOT NULL                  | Date the item was modified                        |
 | description           | string        |                           | A more detailed description of what it is         |
 | link                  | string        |                           | A link where the item could be found online       |
 
@@ -45,6 +51,8 @@ The following is the structure of the database for the server:
 | day                   | string        | NOT NULL                  | Day of the year the occasion is on                |
 | day-this-year         | string        | NOT NULL                  | Day of the year used this year for rolling        |
 | type                  | int           | NOT NULL                  | Indicator for giving/receiving/both               |
+| created               | string        | NOT NULL                  | Date the occasion was created                     |
+| modified              | string        | NOT NULL                  | Date the occasion was modified                    |
 
 ## Occasion-List-Mappings
 
