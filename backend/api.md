@@ -33,18 +33,19 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/{id}/sharing/delete-code                        | Removes the share code, not creating a new one                |
 | /v1/lists/{id}/sharing/{user-id}/set                      | Allows person to be able to view the list                     |
 | /v1/lists/{id}/sharing/{user-id}/unset                    | Unallows person to view assuming not able to by other means   |
+| /v1/receiving                                             | Gets all of the occasions the user is receiving gifts for     |
+| /v1/receiving/default-roll                                | Gets all of the occasions the user is receiving gifts for     |
+| /v1/receiving/{occasion-id}                               | Gets summary info about the receiving occasion                |
 | /v1/giving                                                | Gets all of the occasions the user is getting gifts for       |
 | /v1/giving/default-roll                                   | Set the default days after an occasion for it to roll         |
-| /v1/giving/add                                            | Adds a new gift giving occasion                               |
-| /v1/giving/{id}                                           | Gets summary info relevant to the occasion                    |
-| /v1/giving/{id}?year=20XX                                 | Gets all the info for an occasion from a previous year        |
-| /v1/giving/{id}/roll                                      | Rolls occasion to the next year                               |
-| /v1/giving/{id}/remove                                    | Removes the giving occasion                                   |
-| /v1/giving/{id}/add                                       | Adds a person to the occasion                                 |
-| /v1/giving/{id}/{person}                                  | Gets info about the person for the occasion                   |
-| /v1/giving/{id}/{person}/remove                           | Remove the person from the occasion                           |
-| /v1/giving/{id}/{person}/update                           | Update info about the person                                  |
-| /v1/giving/{id}/{person}/add                              | Adds a gift for the person, marks the gift if getting off list|
-| /v1/giving/{id}/{person}/{gift}                           | Gets info about the gift                                      |
-| /v1/giving/{id}/{person}/{gift}/remove                    | Removes the gift, unmarks if the gift was marked              |
-| /v1/giving/{id}/{person}/{gift}/update                    | Updates the info or status of the gift                        |
+| /v1/giving/{occasion-id}                                  | Gets summary info relevant to the occasion                    |
+| /v1/giving/{occasion-id}?year=20XX                        | Gets all the info for an occasion from a previous year        |
+| /v1/giving/{occasion-id}/roll                             | Rolls occasion to the next year                               |
+| /v1/giving/{occasion-id}/add                              | Adds a person to the occasion                                 |
+| /v1/giving/{occasion-id}/{person}                         | Gets info about the person for the occasion                   |
+| /v1/giving/{occasion-id}/{person}/remove                  | Remove the person from the occasion                           |
+| /v1/giving/{occasion-id}/{person}/update                  | Update info about the person                                  |
+| /v1/giving/{occasion-id}/{person}/add                     | Adds a gift for the person, marks the gift if getting off list|
+| /v1/giving/{occasion-id}/{person}/{gift}                  | Gets info about the gift                                      |
+| /v1/giving/{occasion-id}/{person}/{gift}/remove           | Removes the gift, unmarks if the gift was marked              |
+| /v1/giving/{occasion-id}/{person}/{gift}/update           | Updates the info or status of the gift                        |
