@@ -10,8 +10,29 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/occasions/add                                         | Create an occasion                                            |
 | /v1/occasions/{id}                                        | Gets info about an occasion                                   |
 | /v1/occasions/{id}/remove                                 | Deletes the occasion                                          |
-| /v1/occasions/{id}/update-info                            | Replaces info about the occasion                              |
-| /v1/occasions/{id}/set-last-date                          | Sets the date to use for rolling for this year                |
+| /v1/occasions/{id}/update                                 | Replaces info about the occasion                              |
+| /v1/occasions/{id}/roll                                   | Rolls occasion to the next year                               |
+| /v1/occasions/{id}/{person-id}/set                        | Gets info about the person for the occasion                   |
+| /v1/occasions/{id}/{person-id}/unset                      | Remove the person from the occasion                           |
+| /v1/occasions/{id}/giving                                 | Gets giving summary info for the occasion                     |
+| /v1/occasions/{id}/giving?year=20XX                       | Gets all the giving info for an occasion in a previous year   |
+| /v1/occasions/{id}/giving/{person-id}/exclude             | Exclude person from giving gifts for this occasion            |
+| /v1/occasions/{id}/giving/{person-id}/add                 | Adds a gift for the person, marks the gift if getting off list|
+| /v1/occasions/{id}/giving/{person-id}/{gift}              | Gets info about the gift                                      |
+| /v1/occasions/{id}/giving/{person-id}/{gift}/remove       | Removes the gift, unmarks if the gift was marked              |
+| /v1/occasions/{id}/giving/{person-id}/{gift}/update       | Updates the info or status of the gift                        |
+| /v1/occasions/{id}/receiving                              | Gets recieving summary info for the occasion                  |
+| /v1/occasions/{id}/receiving?year=20XX                    | Gets all the receiving info for an occasion in a previous year|
+| /v1/occasions/{id}/receiving/{person-id}/exclude          | Exclude person from receiving gifts for this occasion         |
+| /v1/occasions/{id}/receiving/{person-id}/add              | Adds a gift received from the person                          |
+| /v1/occasions/{id}/receiving/{person-id}/{gift}           | Gets info about the gift                                      |
+| /v1/occasions/{id}/receiving/{person-id}/{gift}/remove    | Removes the gift                                              |
+| /v1/occasions/{id}/receiving/{person-id}/{gift}/update    | Updates the info or status of the gift                        |
+| /v1/people                                                | Gets list of people, both users you created and existing      |
+| /v1/people/add                                            | Creates a person/adds existing to your network                |
+| /v1/people/{id}                                           | Gets info about a person                                      |
+| /v1/people/{id}/remove                                    | Deletes a person, removing them from all occasions            |
+| /v1/people/{id}/update                                    | Updates info about the person                                 |
 | /v1/lists                                                 | Gets all of the lists you have created                        |
 | /v1/lists/default-share                                   | Sets the default share mode for new lists                     |
 | /v1/lists/add                                             | Adds a new list                                               |
@@ -33,19 +54,3 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/{id}/sharing/delete-code                        | Removes the share code, not creating a new one                |
 | /v1/lists/{id}/sharing/{user-id}/set                      | Allows person to be able to view the list                     |
 | /v1/lists/{id}/sharing/{user-id}/unset                    | Unallows person to view assuming not able to by other means   |
-| /v1/receiving                                             | Gets all of the occasions the user is receiving gifts for     |
-| /v1/receiving/default-roll                                | Gets all of the occasions the user is receiving gifts for     |
-| /v1/receiving/{occasion-id}                               | Gets summary info about the receiving occasion                |
-| /v1/giving                                                | Gets all of the occasions the user is getting gifts for       |
-| /v1/giving/default-roll                                   | Set the default days after an occasion for it to roll         |
-| /v1/giving/{occasion-id}                                  | Gets summary info relevant to the occasion                    |
-| /v1/giving/{occasion-id}?year=20XX                        | Gets all the info for an occasion from a previous year        |
-| /v1/giving/{occasion-id}/roll                             | Rolls occasion to the next year                               |
-| /v1/giving/{occasion-id}/add                              | Adds a person to the occasion                                 |
-| /v1/giving/{occasion-id}/{person}                         | Gets info about the person for the occasion                   |
-| /v1/giving/{occasion-id}/{person}/remove                  | Remove the person from the occasion                           |
-| /v1/giving/{occasion-id}/{person}/update                  | Update info about the person                                  |
-| /v1/giving/{occasion-id}/{person}/add                     | Adds a gift for the person, marks the gift if getting off list|
-| /v1/giving/{occasion-id}/{person}/{gift}                  | Gets info about the gift                                      |
-| /v1/giving/{occasion-id}/{person}/{gift}/remove           | Removes the gift, unmarks if the gift was marked              |
-| /v1/giving/{occasion-id}/{person}/{gift}/update           | Updates the info or status of the gift                        |
