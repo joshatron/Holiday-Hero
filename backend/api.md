@@ -7,6 +7,7 @@ Below are the endpoints for the Holiday Hero server:
 |-----------------------------------------------------------|---------------------------------------------------------------|
 | /v1/register                                              | This is how to create a new user                              |
 | /v1/occasions                                             | Gets a list of all the user's occasions                       |
+| /v1/occasions/default-roll                                | Sets the default days after an occasion to roll               |
 | /v1/occasions/add                                         | Create an occasion                                            |
 | /v1/occasions/{id}                                        | Gets info about an occasion                                   |
 | /v1/occasions/{id}/remove                                 | Deletes the occasion                                          |
@@ -17,6 +18,7 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/occasions/{id}/giving                                 | Gets giving summary info for the occasion                     |
 | /v1/occasions/{id}/giving?year=20XX                       | Gets all the giving info for an occasion in a previous year   |
 | /v1/occasions/{id}/giving/{person-id}/exclude             | Exclude person from giving gifts for this occasion            |
+| /v1/occasions/{id}/giving/{person-id}/include             | Include person from giving gifts for this occasion            |
 | /v1/occasions/{id}/giving/{person-id}/add                 | Adds a gift for the person, marks the gift if getting off list|
 | /v1/occasions/{id}/giving/{person-id}/{gift}              | Gets info about the gift                                      |
 | /v1/occasions/{id}/giving/{person-id}/{gift}/remove       | Removes the gift, unmarks if the gift was marked              |
@@ -24,6 +26,7 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/occasions/{id}/receiving                              | Gets recieving summary info for the occasion                  |
 | /v1/occasions/{id}/receiving?year=20XX                    | Gets all the receiving info for an occasion in a previous year|
 | /v1/occasions/{id}/receiving/{person-id}/exclude          | Exclude person from receiving gifts for this occasion         |
+| /v1/occasions/{id}/receiving/{person-id}/include          | Include person from receiving gifts for this occasion         |
 | /v1/occasions/{id}/receiving/{person-id}/add              | Adds a gift received from the person                          |
 | /v1/occasions/{id}/receiving/{person-id}/{gift}           | Gets info about the gift                                      |
 | /v1/occasions/{id}/receiving/{person-id}/{gift}/remove    | Removes the gift                                              |
@@ -52,5 +55,6 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/{id}/sharing/code                               | Gets a code that anyone can use to see the list               |
 | /v1/lists/{id}/sharing/reset-code                         | Resets the share code so that the old one is invalid          |
 | /v1/lists/{id}/sharing/delete-code                        | Removes the share code, not creating a new one                |
-| /v1/lists/{id}/sharing/{user-id}/set                      | Allows person to be able to view the list                     |
-| /v1/lists/{id}/sharing/{user-id}/unset                    | Unallows person to view assuming not able to by other means   |
+| /v1/lists/{id}/sharing/{person-id}/set                    | Allows person to be able to view the list                     |
+| /v1/lists/{id}/sharing/{person-id}/unset                  | Unallows person to view assuming not able to by other means   |
+| /v1/lists/code/{code}                                     | Gets a list from a share code                                 |
