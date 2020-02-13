@@ -58,3 +58,10 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/{id}/sharing/{person-id}/set                    | Allows person to be able to view the list                     |
 | /v1/lists/{id}/sharing/{person-id}/unset                  | Unallows person to view assuming not able to by other means   |
 | /v1/lists/code/{code}                                     | Gets a list from a share code                                 |
+| /v1/admin/{user-id}/update-password                       | Update password for yourself/other, if blank makes random     |
+| /v1/admin/{user-id}/update-username                       | Update username for yourself/other, if blank makes random     |
+| /v1/admin/{user-id}/unlock                                | Unlocks a user who got locked out                             |
+| /v1/admin/{user-id}/delete                                | Delete a user and all their info                              |
+| /v1/admin/{user-id}/update-level                          | Promote or demote a user                                      |
+| /v1/admin/{user-id}/export                                | Export all info about a user                                  |
+| /v1/admin/import                                          | Create a user based on info                                   |

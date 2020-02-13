@@ -15,6 +15,9 @@ The following is the structure of the database for the server:
 | default-share-mode    | int           | NOT NULL                  | Default share mode for new lists                  |
 | created               | string        | NOT NULL                  | Date the user was created                         |
 | last-login            | string        | NOT NULL                  | Date the user last logged in                      |
+| login-attempts        | int           | NOT NULL                  | Number of times a user has failed to log in       |
+| state                 | int           | NOT NULL                  | NORMAL or LOCKED                                  |
+| level                 | int           | NOT NULL                  | USER, MODERATOR, or ADMIN                         |
 
 ## Lists
 
@@ -79,13 +82,14 @@ The following is the structure of the database for the server:
 | title                 | string        | NOT NULL                  | Title of the occasion                             |
 | description           | string        | NOT NULL                  | description of the occasion                       |
 
-## Nonusers
+## People
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
-| id                    | string        | PRIMARY KEY               | UUID of the non-user                              |
-| name                  | string        | NOT NULL                  | Name of the non-user                              |
+| id                    | string        | PRIMARY KEY               | UUID of the person                                |
+| name                  | string        | NOT NULL                  | Name of the person                                |
 | owner                 | string        | NOT NULL                  | User who created the non-user                     |
+| user                  | string        |                           | UUID of the person, if another user               |
 
 ## Gifts   
 
