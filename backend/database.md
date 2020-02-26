@@ -19,6 +19,52 @@ The following is the structure of the database for the server:
 | state                 | int           | NOT NULL                  | NORMAL or LOCKED                                  |
 | level                 | int           | NOT NULL                  | USER, MODERATOR, or ADMIN                         |
 
+## Occasions
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the occasion                              |
+| owner                 | string        | NOT NULL                  | UUID of the occasion owner                        |
+| title                 | string        | NOT NULL                  | Title displayed for the occasion                  |
+| description           | string        |                           | Description of the occasion                       |
+| day                   | string        | NOT NULL                  | Day of the year the occasion is on                |
+| day-this-year         | string        | NOT NULL                  | Day of the year used this year for rolling        |
+| current-year          | int           | NOT NULL                  | The current year for this occasion                |
+| type                  | int           | NOT NULL                  | Indicator for giving/receiving/both               |
+| created               | string        | NOT NULL                  | Date the occasion was created                     |
+| modified              | string        | NOT NULL                  | Date the occasion was modified                    |
+
+## Occasion-People
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the relationship                          |
+| occasion-id           | string        | NOT NULL                  | UUID of the occasion                              |
+| person-id             | string        | NOT NULL                  | UUID of the person                                |
+| type                  | int           | NOT NULL                  | Indicator for giving/receiving/both               |
+
+## Occasion-Gift
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the relationship                          |
+| occasion-id           | string        | NOT NULL                  | UUID of the occasion                              |
+| person-id             | string        | NOT NULL                  | UUID of the person receiving                      |
+| year                  | int           | NOT NULL                  | The year of the gift                              |
+| date                  | string        |                           | The specific date of the gift                     |
+| gift-name             | string        | NOT NULL                  | The name of the gift                              |
+| gift-description      | string        |                           | A description of the gift                         |
+| type                  | int           |                           | Whether the gift was given or received            |
+| status                | int           |                           | For giving, bought, received, wrapped, given      |
+
+## Occasion-List
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the mapping                               |
+| list                  | string        | NOT NULL                  | UUID of the list                                  |
+| occasion              | string        | NOT NULL                  | UUID of the occasion                              |
+
 ## Lists
 
 | Field                 | Type          | Parameters                | Description                                       |
@@ -43,28 +89,6 @@ The following is the structure of the database for the server:
 | description           | string        |                           | A more detailed description of what it is         |
 | link                  | string        |                           | A link where the item could be found online       |
 
-## Occasions
-
-| Field                 | Type          | Parameters                | Description                                       |
-|-----------------------|---------------|---------------------------|---------------------------------------------------|
-| id                    | string        | PRIMARY KEY               | UUID of the occasion                              |
-| owner                 | string        | NOT NULL                  | UUID of the occasion owner                        |
-| title                 | string        | NOT NULL                  | Title displayed for the occasion                  |
-| description           | string        |                           | Description of the occasion                       |
-| day                   | string        | NOT NULL                  | Day of the year the occasion is on                |
-| day-this-year         | string        | NOT NULL                  | Day of the year used this year for rolling        |
-| type                  | int           | NOT NULL                  | Indicator for giving/receiving/both               |
-| created               | string        | NOT NULL                  | Date the occasion was created                     |
-| modified              | string        | NOT NULL                  | Date the occasion was modified                    |
-
-## Occasion-List-Mappings
-
-| Field                 | Type          | Parameters                | Description                                       |
-|-----------------------|---------------|---------------------------|---------------------------------------------------|
-| id                    | string        | PRIMARY KEY               | UUID of the mapping                               |
-| list                  | string        | NOT NULL                  | UUID of the list                                  |
-| occasion              | string        | NOT NULL                  | UUID of the occasion                              |
-
 ## List-Shares
 
 | Field                 | Type          | Parameters                | Description                                       |
@@ -72,15 +96,6 @@ The following is the structure of the database for the server:
 | id                    | string        | PRIMARY KEY               | UUID of the mapping                               |
 | list                  | string        | NOT NULL                  | UUID of the list                                  |
 | user                  | string        | NOT NULL                  | UUID of the user to share with                    |
-
-## Giving
-
-| Field                 | Type          | Parameters                | Description                                       |
-|-----------------------|---------------|---------------------------|---------------------------------------------------|
-| id                    | string        | PRIMARY KEY               | UUID of the giving occasion                       |
-| owner                 | string        | NOT NULL                  | UUID of the user                                  |
-| title                 | string        | NOT NULL                  | Title of the occasion                             |
-| description           | string        | NOT NULL                  | description of the occasion                       |
 
 ## People
 
@@ -90,14 +105,3 @@ The following is the structure of the database for the server:
 | name                  | string        | NOT NULL                  | Name of the person                                |
 | owner                 | string        | NOT NULL                  | User who created the non-user                     |
 | user                  | string        |                           | UUID of the person, if another user               |
-
-## Gifts   
-
-| Field                 | Type          | Parameters                | Description                                       |
-|-----------------------|---------------|---------------------------|---------------------------------------------------|
-| id                    | string        | PRIMARY KEY               | UUID of the gift                                  |
-| title                 | string        | NOT NULL                  | Name of the gift                                  |
-| description           | string        |                           | Description for the gift                          |
-| owner                 | string        | NOT NULL                  | User who created the gift                         |
-| receiver              | string        | NOT NULL                  | User or nonuser who the gift is for               |
-| status                | int           | NOT NULL                  | Status of the gift, maps to an enum               |
