@@ -36,6 +36,10 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/people/{id}                                           | Gets info about a person                                      |
 | /v1/people/{id}/remove                                    | Deletes a person, removing them from all occasions            |
 | /v1/people/{id}/update                                    | Updates info about the person                                 |
+| /v1/people/{id}/ideas                                     | Gets list of gift ideas for the person                        |
+| /v1/people/{id}/ideas/{item-id}                           | Gets info about the item                                      |
+| /v1/people/{id}/ideas/{item-id}/remove                    | Remove the item                                               |
+| /v1/people/{id}/ideas/{item-id}/update                    | Updates info about the item                                   |
 | /v1/lists                                                 | Gets all of the lists you have created                        |
 | /v1/lists/default-share                                   | Sets the default share mode for new lists                     |
 | /v1/lists/add                                             | Adds a new list                                               |
@@ -58,16 +62,6 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/{id}/sharing/{person-id}/set                    | Allows person to be able to view the list                     |
 | /v1/lists/{id}/sharing/{person-id}/unset                  | Unallows person to view assuming not able to by other means   |
 | /v1/lists/code/{code}                                     | Gets a list from a share code                                 |
-| /v1/ideas                                                 | Gets all idea lists                                           |
-| /v1/ideas/add                                             | Create an idea list                                           |
-| /v1/ideas/{id}                                            | Gets info about idea list                                     |
-| /v1/ideas/{id}/remove                                     | Removes the idea list                                         |
-| /v1/ideas/{id}/update                                     | Update metadata about idea list                               |
-| /v1/ideas/{id}/items                                      | Gets all ideas                                                |
-| /v1/ideas/{id}/items/add                                  | Adds idea to list                                             |
-| /v1/ideas/{id}/items/{item-id}                            | Gets info about idea                                          |
-| /v1/ideas/{id}/items/{item-id}/remove                     | Removes idea from list                                        |
-| /v1/ideas/{id}/items/{item-id}/update                     | Update info about idea                                        |
 | /v1/admin/{user-id}/update-password                       | Update password for yourself/other, if blank makes random     |
 | /v1/admin/{user-id}/update-username                       | Update username for yourself/other, if blank makes random     |
 | /v1/admin/{user-id}/unlock                                | Unlocks a user who got locked out                             |
