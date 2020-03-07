@@ -43,7 +43,7 @@ The following is the structure of the database for the server:
 | person-id             | string        | NOT NULL                  | UUID of the person                                |
 | type                  | int           | NOT NULL                  | Indicator for giving/receiving/both               |
 
-## Occasion-Gift
+## Gifts
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -77,7 +77,7 @@ The following is the structure of the database for the server:
 | share-mode            | int           | NOT NULL                  | Sharing mode, number corresponds to enum          |
 | share-code            | string        |                           | Share code, if empty there is no code             |
 
-## List-Items
+## Ideas
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -105,3 +105,11 @@ The following is the structure of the database for the server:
 | name                  | string        | NOT NULL                  | Name of the person                                |
 | owner                 | string        | NOT NULL                  | User who created the non-user                     |
 | user                  | string        |                           | UUID of the person, if another user               |
+
+## People-Ideas
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the mapping                               |
+| person                | string        | PRIMARY KEY               | UUID of the person                                |
+| idea                  | string        | PRIMARY KEY               | UUID of the idea, which is a list item            |
