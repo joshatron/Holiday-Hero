@@ -39,8 +39,8 @@ The following is the structure of the database for the server:
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
 | id                    | string        | PRIMARY KEY               | UUID of the relationship                          |
-| occasion-id           | string        | NOT NULL                  | UUID of the occasion                              |
-| person-id             | string        | NOT NULL                  | UUID of the person                                |
+| occasion              | string        | NOT NULL                  | UUID of the occasion                              |
+| person                | string        | NOT NULL                  | UUID of the person                                |
 | type                  | int           | NOT NULL                  | Indicator for giving/receiving/both               |
 
 ## Gifts
@@ -48,22 +48,13 @@ The following is the structure of the database for the server:
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
 | id                    | string        | PRIMARY KEY               | UUID of the relationship                          |
-| occasion-id           | string        | NOT NULL                  | UUID of the occasion                              |
-| person-id             | string        | NOT NULL                  | UUID of the person receiving                      |
+| occasion              | string        | NOT NULL                  | UUID of the occasion                              |
+| person                | string        | NOT NULL                  | UUID of the person giving/receiving               |
 | year                  | int           | NOT NULL                  | The year of the gift                              |
 | date                  | string        |                           | The specific date of the gift                     |
-| gift-name             | string        | NOT NULL                  | The name of the gift                              |
-| gift-description      | string        |                           | A description of the gift                         |
-| type                  | int           |                           | Whether the gift was given or received            |
-| status                | int           |                           | For giving, bought, received, wrapped, given      |
-
-## Occasion-List
-
-| Field                 | Type          | Parameters                | Description                                       |
-|-----------------------|---------------|---------------------------|---------------------------------------------------|
-| id                    | string        | PRIMARY KEY               | UUID of the mapping                               |
-| list                  | string        | NOT NULL                  | UUID of the list                                  |
-| occasion              | string        | NOT NULL                  | UUID of the occasion                              |
+| name                  | string        | NOT NULL                  | The name of the gift                              |
+| description           | string        |                           | A description of the gift                         |
+| status                | int           |                           | Indicator for received, or current giving status  |
 
 ## Lists
 
@@ -77,15 +68,23 @@ The following is the structure of the database for the server:
 | share-mode            | int           | NOT NULL                  | Sharing mode, number corresponds to enum          |
 | share-code            | string        |                           | Share code, if empty there is no code             |
 
+## List-Occasion
+
+| Field                 | Type          | Parameters                | Description                                       |
+|-----------------------|---------------|---------------------------|---------------------------------------------------|
+| id                    | string        | PRIMARY KEY               | UUID of the mapping                               |
+| list                  | string        | NOT NULL                  | UUID of the list                                  |
+| occasion              | string        | NOT NULL                  | UUID of the occasion                              |
+
 ## Ideas
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
 | id                    | string        | PRIMARY KEY               | UUID of the list item                             |
-| list                  | string        | NOT NULL                  | UUID of the list                                  |
-| title                 | string        | NOT NULL                  | Title displayed for the item                      |
+| list                  | string        |                           | UUID of the list                                  |
 | created               | string        | NOT NULL                  | Date the item was created                         |
 | modified              | string        | NOT NULL                  | Date the item was modified                        |
+| title                 | string        | NOT NULL                  | Title displayed for the item                      |
 | description           | string        |                           | A more detailed description of what it is         |
 | link                  | string        |                           | A link where the item could be found online       |
 
