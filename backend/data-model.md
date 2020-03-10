@@ -1,9 +1,37 @@
-Holiday Hero Database
-=====================
+Holiday Hero Data Model
+=======================
+
+The following are the data classes used by Holiday Hero:
+
+#### User
+
+This holds all the basic info about a user.
+
+ * id: String
+ * username: String
+ * auth: String
+ * name: String
+ * defaultRollDays: int
+ * defaultShareMode: UserShareMode
+ * created: LocalDateTime
+ * lastLogin: LocalDateTime
+ * loginAttempts: int
+ * state: UserState
+ * level: UserLevel
+
+#### UserShareMode
+
+This is an enum for a user's default share mode.
+
+ * PUBLIC
+ * PRIVATE
+
+Database Model
+--------------
 
 The following is the structure of the database for the server:
 
-## Users
+### Users
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -19,7 +47,7 @@ The following is the structure of the database for the server:
 | state                 | int           | NOT NULL                  | NORMAL or LOCKED                                  |
 | level                 | int           | NOT NULL                  | USER, MODERATOR, or ADMIN                         |
 
-## People
+### People
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -29,7 +57,7 @@ The following is the structure of the database for the server:
 | owner                 | string        | NOT NULL                  | User who created the non-user                     |
 | user                  | string        |                           | UUID of the person, if another user               |
 
-## Gifts
+### Gifts
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -40,7 +68,7 @@ The following is the structure of the database for the server:
 | date                  | string        |                           | The specific date of the gift                     |
 | status                | int           |                           | Indicator for received, or current giving status  |
 
-## Occasions
+### Occasions
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -55,7 +83,7 @@ The following is the structure of the database for the server:
 | created               | string        | NOT NULL                  | Date the occasion was created                     |
 | modified              | string        | NOT NULL                  | Date the occasion was modified                    |
 
-## Lists
+### Lists
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -67,7 +95,7 @@ The following is the structure of the database for the server:
 | share-mode            | int           | NOT NULL                  | Sharing mode, number corresponds to enum          |
 | share-code            | string        |                           | Share code, if empty there is no code             |
 
-## Occasions-Giving
+### Occasions-Giving
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -75,7 +103,7 @@ The following is the structure of the database for the server:
 | occasion              | string        | NOT NULL                  | UUID of the occasion                              |
 | person                | string        | NOT NULL                  | UUID of the person                                |
 
-## Occasions-Recieving
+### Occasions-Recieving
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -83,7 +111,7 @@ The following is the structure of the database for the server:
 | occasion              | string        | NOT NULL                  | UUID of the occasion                              |
 | person                | string        | NOT NULL                  | UUID of the person                                |
 
-## Occasions-Gifts  
+### Occasions-Gifts  
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -91,7 +119,7 @@ The following is the structure of the database for the server:
 | occasion              | string        | NOT NULL                  | UUID of the occasion                              |
 | gift                  | string        | NOT NULL                  | UUID of the gift                                  |
 
-## Lists-Occasions
+### Lists-Occasions
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -99,7 +127,7 @@ The following is the structure of the database for the server:
 | list                  | string        | NOT NULL                  | UUID of the list                                  |
 | occasion              | string        | NOT NULL                  | UUID of the occasion                              |
 
-## Lists-Shares
+### Lists-Shares
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
@@ -107,7 +135,7 @@ The following is the structure of the database for the server:
 | list                  | string        | NOT NULL                  | UUID of the list                                  |
 | user                  | string        | NOT NULL                  | UUID of the user to share with                    |
 
-## People-Ideas
+### People-Ideas
 
 | Field                 | Type          | Parameters                | Description                                       |
 |-----------------------|---------------|---------------------------|---------------------------------------------------|
