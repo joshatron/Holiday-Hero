@@ -125,7 +125,7 @@ This holds info about lists of gift ideas for a user.
    * Whether anyone with a share code can view the list, or if only specified users have access
  * shareCode: String
    * The share code to give out so others can see the list
- * sharing: List\<User\>
+ * shared: List\<User\>
    * If the list is private, only these users can view
  * items: List\<Gift\>
    * All the ideas on the list
@@ -133,6 +133,8 @@ This holds info about lists of gift ideas for a user.
    * When a list rolls, all CHOSEN items go the appropriate occasion's received list
  * occasions: List\<Occasion\>
    * The occasions the list should be used for
+ * next: LocalDate
+   * The next occasion for the list, changes when the list is rolled
 
 #### UserState
 
