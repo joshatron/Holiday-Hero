@@ -64,3 +64,5 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/admin/{user}/update-level                             | Promote or demote a user                                      |
 | /v1/admin/{user}/export                                   | Export all info about a user                                  |
 | /v1/admin/import                                          | Create a user based on info                                   |
+| /v1/admin/register-mode                                   | Whether you need an invite code or not to register            |
+| /v1/admin/register-code                                   | Gives a one time use registration code                        |
