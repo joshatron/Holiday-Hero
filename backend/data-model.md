@@ -136,6 +136,17 @@ This holds info about lists of gift ideas for a user.
  * next: LocalDate
    * The next occasion for the list, changes when the list is rolled
 
+#### RegistrationCode
+
+This is a code that can be used to register a new account if the registration mode is set to private.
+These are deleted after they are used.
+
+ * code: String
+   * The code to be used
+ * created: LocalDateTime
+   * When the code was created
+   * Could be used to have expiring codes
+
 #### UserState
 
 This is an enum for a user's current state.
