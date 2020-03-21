@@ -5,7 +5,6 @@ Below are the endpoints for the Holiday Hero server:
 
 | Endpoint                                         | Type   | Description                                                   |
 |--------------------------------------------------|--------|---------------------------------------------------------------|
-| /v1/register                                     | PUT    | This is how to create a new user                              |
 | /v1/occasions                                    | GET    | Gets a list of all the user's occasions                       |
 | /v1/occasions/default-roll                       | POST   | Sets the default days after an occasion to roll               |
 | /v1/occasions/add                                | PUT    | Create an occasion                                            |
@@ -57,6 +56,7 @@ Below are the endpoints for the Holiday Hero server:
 | /v1/lists/{id}/sharing/{person}/set              | POST   | Allows person to be able to view the list                     |
 | /v1/lists/{id}/sharing/{person}/unset            | POST   | Unallows person to view assuming not able to by other means   |
 | /v1/lists/code/{code}                            | GET    | Gets a list from a share code, no auth needed if public       |
+| /v1/admin/register                               | PUT    | This is how to create a new user                              |
 | /v1/admin/{user}/update-password                 | POST   | Update password for yourself/other, if blank makes random     |
 | /v1/admin/{user}/update-username                 | POST   | Update username for yourself/other, if blank makes random     |
 | /v1/admin/{user}/unlock                          | POST   | Unlocks a user who got locked out                             |
