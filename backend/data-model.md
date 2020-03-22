@@ -63,16 +63,16 @@ This hold info about a gift, either given or received.
    * A concise name of the gift
  * description: String
    * A more detailed description of the gift
- * created: LocalDateTime
-   * When the gift was created
- * modified: LocalDateTime
-   * The last time the gift was modified
  * person: Person
    * The person who the gift is associated with
  * given: LocalDate
    * The date the gift was given
  * status: GiftStatus
    * Indicator for whether a gift is an idea, received, or several stages toward being given
+ * created: LocalDateTime
+   * When the gift was created
+ * modified: LocalDateTime
+   * The last time the gift was modified
 
 #### Occasion
 
@@ -80,7 +80,7 @@ This holds info about occasions, which are holidays, birthdays, etc.
 
  * id: UUID
    * Unique ID for the occasion
- * title: String
+ * name: String
    * Brief title of the occasion
  * description: String
    * Longer description of the occasion
@@ -94,34 +94,30 @@ This holds info about occasions, which are holidays, birthdays, etc.
  * currentYear: int
    * The current year of the occasion
    * This is used to keep track of when it rolls
- * created: LocalDateTime
-   * When the occasion was created
- * modified: LocalDateTime
-   * The last time the metadata was modified
  * giving: List\<Person\>
    * A list of people the user needs to get gifts for this occasion
  * given: List\<Gift\>
    * A list of the gifts you have given or are in the process of giving
  * received: List\<Gift\>
    * A list of all the gifts you received during this occasion
+ * created: LocalDateTime
+   * When the occasion was created
+ * modified: LocalDateTime
+   * The last time the metadata was modified
 
-#### List
+#### WishList
 
 This holds info about lists of gift ideas for a user.
 
  * id: UUID
    * Unique ID for the list
- * title: String
+ * name: String
    * A short title of the list
  * description: String
    * A longer description of the list
- * created: LocalDateTime
-   * When the list was created
- * modified: LocalDateTime
-   * The last time the list was editted
  * owner: User
    * The user who owns the list
- * public: boolean
+ * isPublic: boolean
    * Whether anyone with a share code can view the list, or if only specified users have access
  * shareCode: String
    * The share code to give out so others can see the list
@@ -135,6 +131,10 @@ This holds info about lists of gift ideas for a user.
    * The occasions the list should be used for
  * next: LocalDate
    * The next occasion for the list, changes when the list is rolled
+ * created: LocalDateTime
+   * When the list was created
+ * modified: LocalDateTime
+   * The last time the list was editted
 
 #### RegistrationCode
 
